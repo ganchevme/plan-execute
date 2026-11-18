@@ -1,0 +1,14 @@
+# Hierarchical planning
+
+Use when several components have meaningful independent responsibilities or a full detailed backlog would depend on unresolved architecture. Do not impose hierarchy on a small utility.
+
+1. Explore requirements, existing solutions and the highest-impact unknowns.
+2. Reuse applicable `plan/ARCHITECTURE.md` decisions, establishing or updating only what the scope needs: component boundaries, dependency direction, data flow, cross-cutting constraints, deployment assumptions and alternatives chosen/rejected for concrete reasons.
+3. Reuse applicable `plan/CONTRACTS.md` contracts, establishing or updating only affected interfaces: public inputs/outputs, versioned data representations, errors, compatibility, ownership and integration expectations. Keep substantial independent contracts in linked files if needed.
+4. Use `plan/PROJECT.md` for stable project policy and routing, and `plan/TASKS.md` as the single complete task register. Create component guides under `plan/components/<component>/PROJECT.md` only when useful; they reference shared preferences and execution/handoff procedures rather than copying them. Each planner reads relevant shared architecture/contract sections, then adds bounded tasks to the existing register. Component guides may link task IDs or give a register search pattern; do not duplicate status tables. Use globally unique IDs such as ING-01 and REPORT-01.
+5. Review component plans together for cycles, incompatible assumptions, shared-file conflicts, missing ownership and integration gaps. Plan an early end-to-end slice and explicit cross-component acceptance work.
+6. Detail near-term milestones; leave distant work as clearly labeled unexpanded milestones, not fake ready executable tasks. Expand them when evidence/contracts stabilize.
+
+Shared knowledge lives in maintained files, not conversation memory. Component plans reference canonical contracts rather than duplicating them. Record an architecture revision and which revision each component plan follows. A proposed contract change goes to the architecture owner, who records the decision, identifies affected consumers, updates their plans and invalidates stale assumptions before dependent work continues. Re-run graph/status validation after changes. Completed implementations may require new migration/adaptation tasks, not silently rewritten history.
+
+The project guide includes resolved settings and links to the ownership map. It does not contain changing task status or completion counts. Readiness depends on global dependencies, including cross-component tasks, not numbering or component-local state. Planned milestones can have descriptive progress, but keep them outside the executable task table until decomposed. Sequential work remains appropriate when contracts are unsettled.

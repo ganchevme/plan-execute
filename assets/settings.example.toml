@@ -1,0 +1,23 @@
+# Optional. Copy only when useful; never include credentials.
+[models]
+preferred_pairs = ["sol/terra", "opus/sonnet"]
+excluded_workers = ["luna", "haiku"]
+# Effort levels must be supported by the worker/tool; the ceiling applies to both roles.
+max_worker_effort = "high" # Up to high, not always high; "unlimited" removes the ceiling.
+worker_effort = "inherit"
+demanding_worker = "strong" # "strong" or "default" from the selected pair
+demanding_effort = "inherit" # No fixed level within the ceiling; does not copy worker_effort.
+
+[workflow]
+tdd = true
+parallelism = "opportunistic"
+commit_after_task = true
+
+[environment]
+isolation = "project-local"
+host_installations = "forbidden"
+python_environment = "venv"
+container_runtime = "auto"
+
+[logging]
+wrapper = "none"

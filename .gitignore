@@ -1,0 +1,38 @@
+# Local OS and Python metadata
+.DS_Store
+Thumbs.db
+.idea/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Logs, build output and release archives
+logs/
+*.log
+build/
+dist/
+versions/
+assets/logs-wrapper/
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+
+# Local settings and credentials; keep distributable examples
+.env
+.env.*
+!.env.example
+!.env.sample
+*.local
+*.local.*
+*.pem
+*.key
+*.p12
+*.pfx
+/plan/settings.toml

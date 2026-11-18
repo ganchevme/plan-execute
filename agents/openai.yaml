@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan & Execute"
+  short_description: "Plan projects and execute tasks with delegated agents"
+  default_prompt: "Use $plan-execute to plan this project or execute the requested tasks, following my stated scope and project settings."
